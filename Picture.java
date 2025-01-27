@@ -14,9 +14,15 @@ public class Picture
     private Square wall;
     private Square window;
     private Triangle roof;
+    
+    //my var
     private Circle sun;
     private Circle sun2;
-    private Circle sun3;
+    private Square dirt;
+    private Square grass;
+    private Square sky;
+    private Triangle mountain;
+    private Person bob;
     private boolean drawn;
 
     /**
@@ -29,7 +35,14 @@ public class Picture
         roof = new Triangle();  
         sun = new Circle();
         sun2 = new Circle();
-        sun3 = new Circle();
+        
+        
+        //my drawing
+        dirt = new Square();
+        grass = new Square();
+        mountain = new Triangle();
+        sky = new Square();
+        bob = new Person();
         drawn = false;
     }
 
@@ -39,7 +52,7 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
+            /**wall.moveHorizontal(-140);
             wall.moveVertical(20);
             wall.changeSize(120);
             wall.makeVisible();
@@ -54,23 +67,49 @@ public class Picture
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
             roof.makeVisible();
+            */
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
-            sun.makeVisible();
+            
+            sun2.changeColor("white");
+            sun2.moveHorizontal(110);
+            sun2.moveVertical(-30);
+            sun2.changeSize(60);
+            
             drawn = true;
             
-            sun2.changeColor("magenta");
-            sun2.moveHorizontal(200);
-            sun2.moveVertical(-79);
-            sun2.makeVisible();
+            dirt.changeSize(1000);
+            dirt.moveHorizontal(-310);
+            dirt.moveVertical(110);
+            dirt.changeColor("brown");
             
-            sun3.changeColor("blue");
-            sun3.moveHorizontal(-200);
-            sun3.moveVertical(-79);
-            sun3.makeVisible();
+            grass.changeSize(1000);
+            grass.moveHorizontal(-310);
+            grass.moveVertical(100);
+            grass.changeColor("green");
+            
+            sky.changeSize(10000);
+            sky.moveHorizontal(-400);
+            sky.moveVertical(-200);
+            sky.changeColor("sBlue");
+            
+            mountain.changeSize(75, 150);
+            mountain.moveVertical(15);
+            
+            bob.moveHorizontal(20);
+            bob.moveVertical(-10);
+            
+            sky.makeVisible();
+            grass.makeVisible();
+            dirt.makeVisible();
+            mountain.makeVisible();
+            sun.makeVisible();
+            sun2.makeVisible();
+            bob.makeVisible();
+            
         }
     }
 
@@ -79,10 +118,14 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        
+        sky.changeColor("white");
+        grass.changeColor("white");
+        dirt.changeColor("black");
+        mountain.changeColor("black");
         sun.changeColor("black");
+        sun2.changeColor("white");
+        bob.changeColor("white");
     }
 
     /**
@@ -90,9 +133,12 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        sky.changeColor("sBlue");
+        grass.changeColor("green");
+        dirt.changeColor("brown");
+        mountain.changeColor("green");
         sun.changeColor("yellow");
+        sun2.changeColor("white");
+        bob.changeColor("black");
     }
 }
